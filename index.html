@@ -17,11 +17,28 @@
         </div>
 
         <!-- 2. Phần ảnh của người bạn mún chúc -->
-        <img src="./img/heo.jpg" alt="" class="cover" />
+        <img src="./img/heo.jpg" alt="" class="cover" onclick="showMessage()" />
+        
 
         <!-- 3. Phần nhạc -->
         <audio id="player" autoplay loop>
             <source src="./music/music.mp3" type="audio/mp3" />
         </audio>
+        <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+        function showMessage() {
+            // 6. Lời nhắn hiện ra khi bấm vào tên hoặc avatar
+            swal({
+                title: "Lời nhắn", // Tiêu đề của popup
+                text: "heo có biết gì không ? Ngày này 17 năm trước có 1 thiên thần chào đời và đó là heo á =)) Chúc heo có 1 ngày đặc biệt thật vui vẻ , hạnh phúc bên gia đình và những người heo thương yêu . Đặc biệt là mong mọi điều tốt lành sẽ đến và làm cho nụ cười trên môi ai đó vẫn rạng nở , tại vì bạn cười xinhhh lắm đó hêhê . Cảm ơn bạn đã xuất hiện để tui simp =)) và đừng biến mất nha ❤️ ", // Nội dung lời nhắn
+                button: {
+                    text: "❤️️",
+                },
+            });
+        }
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </body>
 </html>
